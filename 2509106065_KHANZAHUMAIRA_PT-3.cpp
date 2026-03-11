@@ -71,11 +71,11 @@ int main()
             break;
 
         case 2:
-            cout << "\nFinish! Thank You><.\n";
+            cout << "\nTerima kasih telah menggunakan program.\n";
             break;
 
         default:
-            cout << "\nGagal. Menu tidak tersedia.\n";
+            cout << "\nMenu tidak tersedia.\n";
         }
 
     } while(menuAwal != 2);
@@ -83,7 +83,8 @@ int main()
     return 0;
 }
 
-bool loginUser(Akun akunUser) //FUNGSI RETURN INI YA BANG & MBA:)
+// FUNGSI RETURN ADA YA INI BANG & MBA...
+bool loginUser(Akun akunUser)
 {
     string inputUsername;
     string inputPassword;
@@ -113,12 +114,11 @@ bool loginUser(Akun akunUser) //FUNGSI RETURN INI YA BANG & MBA:)
             << 3 - percobaan << endl;
     }
 
-    cout << "\nAnda telah gagal login sebanyak 3 kali.\n";
+    cout << "\nAnda gagal login 3 kali.\n";
 
     return false;
 }
 
-// MENU UTAMA
 void menuUtama(MemberGym daftarMember[], int &jumlahMember, int &autoID)
 {
     int menu;
@@ -167,7 +167,7 @@ void menuUtama(MemberGym daftarMember[], int &jumlahMember, int &autoID)
     } while(menu != 5);
 }
 
-// PROSEDUR INI ADA YA BANG & MBA:)
+// PROSEDUR ADA YA INI BANG & MBA...
 void tambahMember(MemberGym daftarMember[], int &jumlahMember, int &autoID)
 {
     if(jumlahMember >= 100)
@@ -231,7 +231,8 @@ void tambahMember(MemberGym daftarMember[], int &jumlahMember, int &autoID)
 
 void lihatMember(MemberGym daftarMember[], int jumlahMember)
 {
-    if(jumlahMember == 0) {
+    if(jumlahMember == 0)
+    {
         cout << "\nBelum ada data member.\n";
         return;
     }
@@ -242,14 +243,11 @@ void lihatMember(MemberGym daftarMember[], int jumlahMember)
 
     for(int i = 0; i < jumlahMember; i++)
     {
-        string nama = daftarMember[i].namaMember.substr(0,13);
-        string jenis = daftarMember[i].informasiMembership.jenisMembership.substr(0,11);
-
         cout << "| "
             << setw(2) << daftarMember[i].idMember << " | "
-            << setw(13) << left << nama << " | "
+            << setw(13) << left << daftarMember[i].namaMember << " | "
             << setw(4) << daftarMember[i].umurMember << " | "
-            << setw(11) << jenis << " | "
+            << setw(11) << daftarMember[i].informasiMembership.jenisMembership << " | "
             << setw(6) << daftarMember[i].informasiMembership.durasiBulan << " |\n";
     }
 
@@ -325,6 +323,7 @@ void updateMember(MemberGym daftarMember[], int jumlahMember)
     if(!ditemukan)
         cout << "ID tidak ditemukan.\n";
 }
+
 void hapusMember(MemberGym daftarMember[], int &jumlahMember)
 {
     int id;
@@ -349,7 +348,7 @@ void hapusMember(MemberGym daftarMember[], int &jumlahMember)
     cout << "ID tidak ditemukan.\n";
 }
 
-// FUNGSI REKURSIF INI YA BANG & MBA:)
+// FUNGSI REKURSIF ADA YA INI BANG & MBA...
 int hitungMemberRekursif(int jumlahMember)
 {
     if(jumlahMember == 0)
