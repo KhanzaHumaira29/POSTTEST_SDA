@@ -204,7 +204,7 @@ void urutID(){
     }
 }
 
-void fibonacciID(int key){
+void fibonacciID(int key){ 
     if(totalData==0){ cout<<"Data kosong!\n"; return; }
 
     urutID();
@@ -227,6 +227,12 @@ void fibonacciID(int key){
     else
         cout<<"Data id hewan tidak ditemukan.\n";
 }
+// Fibonacci Search di Manajemen PETCARE
+// pakai bantuan angka fibonacci untuk nentuin posisi pengecekan data.
+// data dicek secara lompat-lompat tidak satu per satu.
+// kalau ID lebih kecil geser ke kanan.
+// kalau ID lebih besar geser ke kiri.
+// diulang terus sampai data ketemu atau memang tidak ada.
 
 void menuUtama(){
     DataHewan* ptr; setPtr(ptr,gudang);
